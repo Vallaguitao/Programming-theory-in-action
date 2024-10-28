@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // to only have one
-
+    private bool isStarted;
     // Basically this is absrtraction making a method and to use it just call that method
     public void StartGame() // i use public for this first
     {
