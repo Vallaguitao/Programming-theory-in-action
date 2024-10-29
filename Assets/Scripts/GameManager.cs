@@ -7,14 +7,22 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // to only have one
     private bool isStarted;
+
+    public GameObject Canvas;
+
     // Basically this is absrtraction making a method and to use it just call that method
     public void StartGame() // i use public for this first
     {
         SceneManager.LoadScene(1);
     }
 
+    private void Update()
+    {
+        GetCanvas();
+    }
     private void Awake() // this is the code to not destroy the gamemanager and instance
     {
+
         // Ensure only one instance of the MainManager exists
         if (Instance == null)
         {
@@ -28,4 +36,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void GetCanvas()
+    {
+        if (Canvas == null)
+        {
+            Canvas = GameObject.Find("Canvas");
+        }
+    }
 }
