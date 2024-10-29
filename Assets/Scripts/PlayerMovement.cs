@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput; // Variable to store the player's horizontal input
     private float xRange = 5; // Range for player movement limits
 
-    // i use protected here which is an encapsulation method
+    // ENCAPSULATION
     protected float speed; // default speed and set to private and will be inherited later 
 
     void Start()
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerController(); // this is abstraction
     }
 
-    public void PlayerController()
+    public void PlayerController() // ABSTRACTION
     {
         horizontalInput = Input.GetAxis("Horizontal"); // Get horizontal input
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput); // Move player
